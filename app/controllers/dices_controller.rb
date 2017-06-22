@@ -5,6 +5,7 @@ class DicesController < ApplicationController
   # GET /dices.json
   def index
     @dices = Dice.all
+    render json: @dices
   end
 
   # GET /dices/1

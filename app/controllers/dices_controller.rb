@@ -17,9 +17,8 @@ class DicesController < ApplicationController
   # POST /dices.json
   def create
     @dice = Dice.new(dice_params)
-
     if @dice.save
-      render :show, status: :created, location: @dice
+      render json: @dice
     else
       render json: @dice.errors, status: :unprocessable_entity
     end
